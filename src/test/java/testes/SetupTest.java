@@ -1,13 +1,12 @@
 package testes;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.SearchPage;
+import pageObjects.WomenCategory;
 import utils.Browser;
 import utils.Utils;
 
@@ -47,8 +46,8 @@ public class SetupTest extends BaseTests{
     @Test
     public void testSarch(){
 
-        String quest = "DRESS";
-        String questResultQtd = "7";
+        String quest = "T-SHIRT";
+        String questResultQtd = "1";
 
         //iniciar paginas
         HomePage home = new HomePage();
@@ -57,7 +56,7 @@ public class SetupTest extends BaseTests{
         SearchPage search = new SearchPage();
         System.out.println("buscando");
 
-        home.doSearch("dress");
+        home.doSearch("T-SHIRT");
         System.out.println("Entrou Em Search, Clicou o Btn e Buscou o Item");
 
         //validar a pesquisa
@@ -66,6 +65,25 @@ public class SetupTest extends BaseTests{
         assertThat(search.getTextHeading_Counter(), CoreMatchers.containsString(questResultQtd));
 
     }
+
+    @Test
+    public void testWomanCategry() {
+
+        HomePage home = new HomePage();
+        System.out.println("Entrou na home");
+
+        WomenCategory women = new WomenCategory();
+
+
+        home.clickWomenCategory();
+        System.out.println("clicou no botao");
+
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("index.php?id_category=3&controller=category")));
+        System.out.println("Validdou o link");
+
+    }
+
+
 
 
 

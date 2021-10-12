@@ -13,6 +13,10 @@ public class HomePageElementMapper {
     @FindBy(css = "button.btn.btn-default.button-search")
     public WebElement submit_search;
 
+    @FindBy(css = "a.sf-with-ul")
+    public WebElement womenBtnCatgory;
+
+
 
 
 
