@@ -12,11 +12,15 @@ public class HomePage extends HomePageElementMapper {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
 
     }
-    public void clickBtLogin(){
-       login.click();
+    public void clickBtSignIn(){
+       signIn.click();
     }
-    public void clickSearch_query_top(){
-        search_query_top.click();
+    public void clickWomenCategory(){
+        womenBtnCatgory.click();
+    }
+
+    /*public void clickSearch_query_top(){
+      search_query_top.click();
     }
     public void sendKeysSearch_query_top(String keys){
         search_query_top.sendKeys( keys);
@@ -29,9 +33,7 @@ public class HomePage extends HomePageElementMapper {
         clickSearch_query_top();
         sendKeysSearch_query_top(quest);
         clickSubmit_search();
-    }
-    public void clickWomenCategory(){
-        womenBtnCatgory.click();
-    }
+    }*/
+
 
 }
